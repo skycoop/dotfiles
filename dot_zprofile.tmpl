@@ -1,0 +1,10 @@
+# Add ~/.local/bin to PATH
+export PATH="$PATH:{{ .chezmoi.homeDir }}/.local/bin"
+
+# pyenv setup
+export PYENV_ROOT="{{ .chezmoi.homeDir }}/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+# Krew setup
+export PATH="${KREW_ROOT:-${{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
