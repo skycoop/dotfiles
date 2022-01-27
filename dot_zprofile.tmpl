@@ -1,7 +1,7 @@
 {{- if ne .homebrewprefix "/usr/local" -}}
 # Setup Brew
 eval "$({{ .homebrewprefix }}/bin/brew shellenv)"
-{{- end }}
+{{- end -}}
 
 # Add ~/.local/bin to PATH
 export PATH="$PATH:{{ .chezmoi.homeDir }}/.local/bin"
