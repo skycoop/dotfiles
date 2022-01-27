@@ -1,8 +1,6 @@
-{{- if eq .chezmoi.os "darwin" -}}
-{{- if eq .chezmoi.arch "arm64" -}}
+{{- if ne .homebrewprefix "/usr/local" -}}
 # Setup Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-{{- end }}
+eval "$({{ .homebrewprefix }}/bin/brew shellenv)"
 {{- end }}
 
 # Add ~/.local/bin to PATH
@@ -14,4 +12,4 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 # Krew setup
-export PATH="${KREW_ROOT:-${{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
+export PATH="${KREW_ROOT:-{{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
