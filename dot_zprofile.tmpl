@@ -5,7 +5,7 @@ eval "$({{ .homebrewprefix }}/bin/brew shellenv)"
 {{ end -}}
 
 # Add ~/.local/bin to PATH
-export PATH="$PATH:{{ .chezmoi.homeDir }}/.local/bin"
+export PATH="{{ .chezmoi.homeDir }}/.local/bin:$PATH"
 
 # pyenv setup
 export PYENV_ROOT="{{ .chezmoi.homeDir }}/.pyenv"
