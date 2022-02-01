@@ -4,6 +4,9 @@ eval "$({{ .homebrewprefix }}/bin/brew shellenv)"
 
 {{ end -}}
 
+# Add brew managed autocompletions
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Add ~/.local/bin to PATH
 export PATH="{{ .chezmoi.homeDir }}/.local/bin:$PATH"
 
