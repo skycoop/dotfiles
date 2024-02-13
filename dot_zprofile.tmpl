@@ -15,3 +15,6 @@ eval "$(nodenv init -)"
 
 # Krew setup
 export PATH="${KREW_ROOT:-{{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
+
+# Rust setup
+source "{{ .chezmoi.homeDir }}/.cargo/env"
