@@ -1,6 +1,6 @@
-{{- if ne .homebrewprefix "/usr/local" -}}
+{{- if ne .homebrewPrefix "/usr/local" -}}
 # Setup Brew
-eval "$({{ .homebrewprefix }}/bin/brew shellenv)"
+eval "$({{ .homebrewPrefix }}/bin/brew shellenv)"
 
 {{ end -}}
 
