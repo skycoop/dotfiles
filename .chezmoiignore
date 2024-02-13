@@ -1,9 +1,6 @@
 .oh-my-zsh/cache/
 **/*.zwc
 
-# Ignore quizlet.zsh
-.oh-my-zsh/custom/quizlet.zsh
-
 {{- if ne .chezmoi.os "darwin" }}
 .iterm2/
 {{- end }}

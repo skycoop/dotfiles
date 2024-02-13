@@ -10,15 +10,7 @@
 {{- else -}}
 {{- end -}}
 
-{{- $systemtype := "" -}}
-{{- if (hasKey . "systemtype") -}}
-{{-   $systemtype = .systemtype -}}
-{{- else -}}
-{{-   $systemtype = promptString "System Type (personal, quizlet)" -}}
-{{- end -}}
-
 [data]
 {{- with $homebrewPrefix }}
   homebrewPrefix = {{ . | quote }}
 {{- end }}
-  systemtype = {{ $systemtype | quote }}

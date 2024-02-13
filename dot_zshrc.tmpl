@@ -83,18 +83,11 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(
   brew
   git
-  golang
   npm
   {{ if eq .chezmoi.os "darwin" -}}
   macos
   {{- end }}
-  pip
-  python
-  pyenv
-  {{- if eq .systemtype "quizlet" }}
-  rbenv
-  yarn
-  {{- end }}
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,8 +119,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias k="kubectl"
 alias tf="terraform"
-
-{{ if eq .systemtype "quizlet" -}}
-alias qdev="/opt/projects/quizlet-puppet/devtools/tools/dev.py"
-alias qprod="/opt/projects/quizlet-puppet/devtools/tools/prod.py"
-{{- end }}
