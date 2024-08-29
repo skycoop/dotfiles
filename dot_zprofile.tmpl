@@ -10,8 +10,8 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 # Add ~/.local/bin to PATH
 export PATH="{{ .chezmoi.homeDir }}/.local/bin:$PATH"
 
-# nodenv setup
-eval "$(nodenv init -)"
+# fnm setup
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Krew setup
 export PATH="${KREW_ROOT:-{{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
