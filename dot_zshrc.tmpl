@@ -90,6 +90,10 @@ plugins=(
   rust
 )
 
+# Setup Brew
+eval "$({{ .homebrewPrefix }}/bin/brew shellenv)"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -120,3 +124,15 @@ fi
 
 alias k="kubectl"
 alias tf="terraform"
+
+# Add ~/.local/bin to PATH
+export PATH="{{ .chezmoi.homeDir }}/.local/bin:$PATH"
+
+# fnm setup
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# Krew setup
+export PATH="${KREW_ROOT:-{{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
+
+# Rust setup
+. "{{ .chezmoi.homeDir }}/.cargo/env"
