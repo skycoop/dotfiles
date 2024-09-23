@@ -1,11 +1,17 @@
 [".oh-my-zsh"]
-    type = "archive"
-    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
+type = "archive"
+url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+
 [".oh-my-zsh/custom/themes/powerlevel10k"]
-    type = "archive"
-    url = "https://github.com/romkatv/powerlevel10k/archive/{{ (gitHubLatestRelease "romkatv/powerlevel10k").TagName }}.tar.gz"
-    exact = true
-    stripComponents = 1
+url = "https://github.com/romkatv/powerlevel10k/archive/{{ (gitHubLatestRelease "romkatv/powerlevel10k").TagName }}.tar.gz"
+type = "archive"
+exact = true
+stripComponents = 1
+
+[".config/wezterm/shell-integration/wezterm.sh"]
+type = "file"
+url = "https://github.com/wez/wezterm/raw/refs/heads/main/assets/shell-integration/wezterm.sh"
+refreshPeriod = "168h"

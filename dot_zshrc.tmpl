@@ -128,6 +128,9 @@ alias tf="terraform"
 # Add ~/.local/bin to PATH
 export PATH="{{ .chezmoi.homeDir }}/.local/bin:$PATH"
 
+# wezterm setup
+. {{ .chezmoi.homeDir }}/.config/wezterm/shell-integration/wezterm.sh
+
 # fnm setup
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --shell zsh)"
 
@@ -135,4 +138,4 @@ eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled
 export PATH="${KREW_ROOT:-{{ .chezmoi.homeDir }}/.krew}/bin:$PATH"
 
 # Rust setup
-. "{{ .chezmoi.homeDir }}/.cargo/env"
+[[ ! -f {{ .chezmoi.homeDir }}/.cargo/env ]] || . "{{ .chezmoi.homeDir }}/.cargo/env"

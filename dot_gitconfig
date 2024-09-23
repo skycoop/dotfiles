@@ -1,0 +1,18 @@
+[user]
+  name = Cooper Benson
+  email = "cooper.benson@quizlet.com"
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBiXSHn5jKt7JzxE2toySn4iwcGrYAMCRlWULe7h/tIt
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
+[includeIf "gitdir:~/personal/"]
+  path = .gitconfig-personal
+[includeIf "gitdir:~/.local/share/chezmoi/.git"]
+  path = .gitconfig-personal
