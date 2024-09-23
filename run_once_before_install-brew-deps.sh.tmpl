@@ -11,9 +11,6 @@ brew "micro"
 brew "fnm"
 
 {{ if eq .chezmoi.os "darwin" -}}
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-
 cask "alfred"
 cask "balance-lock"
 cask "boop"
@@ -29,6 +26,7 @@ cask "meetingbar"
 cask "rectangle"
 cask "spotify"
 cask "stats"
+cask "unnaturalscrollwheels"
 cask "visual-studio-code"
 {{ end -}}
 EOF
