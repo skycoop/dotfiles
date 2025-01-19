@@ -1,18 +1,13 @@
 [user]
   name = Cooper Benson
-  email = "cooper.benson@quizlet.com"
-  signingkey = {{ onepasswordRead "op://Employee/Quizlet Github/public key" "quizlet.1password.com" }}
+  email = "skycoop@gmail.com"
+  signingkey = {{ onepasswordRead "op://Private/Personal Github/public key" "my.1password.com" }}
 
 [gpg]
   format = ssh
 
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  program = "/opt/1Password/op-ssh-sign"
 
 [commit]
   gpgsign = true
-
-[includeIf "gitdir:~/personal/"]
-  path = .gitconfig-personal
-[includeIf "gitdir:~/.local/share/chezmoi/.git"]
-  path = .gitconfig-personal
