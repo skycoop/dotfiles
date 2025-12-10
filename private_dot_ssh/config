@@ -1,2 +1,6 @@
 Host *
   IdentityAgent ~/.1password/agent.sock
+
+Host pupnas
+  HostName pupnas.lan
+  User truenas_admin
